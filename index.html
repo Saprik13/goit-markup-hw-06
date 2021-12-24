@@ -47,7 +47,10 @@
         <button type="button" class="hero-button" data-modal-open>Заказать услугу</button>
 <!-- модальное окно -->
 <div class="backdrop is-hidden" data-modal>
-    <div class="modal">
+    <div class="modal" data-modal-close>
+        <div>
+            <form class="js-speaker-form"></form>
+        </div>
         <button type="button" class="close-modal" data-modal-close>
             <svg class="close-ico" width="11" height="11">
                 <use href="./images/sprite.svg#icon-close"></use>
@@ -351,7 +354,8 @@
 <!-- footer -->
 <footer class="page-footer">
     <div class="footer container">
-<div class="contacts-ft">
+<!-- контакты футера -->
+        <div class="contacts-ft">
         <a href="./index.html" class="logo logo-f">Web<span class="logo-footer">Studio</span></a>
         <address>
             <ul class="footer-info">
@@ -364,6 +368,7 @@
             </ul>
         </address>
 </div>
+<!-- соцсети футера -->
         <div class="soc-card-ft">
             <p class="soc-title-ft">присоединяйтесь</p>
             <ul class="soc-btn-ft">
@@ -396,11 +401,25 @@
                     </a>
                 </li>
             </ul>
+            </div>
+<!-- рассылка -->
+<div class="mailing-ft">
+    <label for="user_mail" class="mailing-title-ft">Подпишитесь на рассылку</label>    
+    <div class="form-field-ft">
+        <input id="user_mail" type="email" name="email" class="input-ft" placeholder="E-mail"/>
+        <button type="submit" class="submit-button">Подписаться
+            <svg class="icon-ft">
+                <use href="./images/icons.svg#icon-send"></use>
+            </svg>
+        </button>
         </div>
-    </div>
-</footer>
+</div> 
 
+</footer>
+<!-- скрипты -->
 <script src="./js/modal.js"></script>
+<script src="./js/js-speaker-form.js"></script>
+
 </body>
 
 </html>
