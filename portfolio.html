@@ -177,6 +177,7 @@
 <!-- footer -->
 <footer class="page-footer">
     <div class="footer container">
+        <!-- контакты футера -->
         <div class="contacts-ft">
             <a href="./index.html" class="logo logo-f">Web<span class="logo-footer">Studio</span></a>
             <address>
@@ -193,6 +194,7 @@
                 </ul>
             </address>
         </div>
+        <!-- соцсети футера -->
         <div class="soc-card-ft">
             <p class="soc-title-ft">присоединяйтесь</p>
             <ul class="soc-btn-ft">
@@ -226,8 +228,23 @@
                 </li>
             </ul>
         </div>
-    </div>
+        <!-- рассылка -->
+        <form class="mailing-ft js-form" autocomplete="off">
+            <label for="user_mail" class="mailing-title-ft">Подпишитесь на рассылку</label>
+            <div class="form-field-ft">
+                <input id="user_mail" type="email" name="email" class="input-ft" placeholder="E-mail" />
+                <button type="submit" class="submit-button">Подписаться
+                    <svg class="icon-send-ft">
+                        <use href="./images/icons.svg#icon-send"></use>
+                    </svg>
+                </button>
+            </div>
+        </form>
 </footer>
+<!-- скрипты -->
+<script src="./js/modal.js"></script>
+<script src="./js/js-form.js"></script>
+
 </body>
 
 </html>
