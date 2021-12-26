@@ -54,7 +54,8 @@ img {
   max-width: 100%;
   height: auto;
 }
-input {
+input,
+textarea {
   outline: none;
 }
 /* анимация */
@@ -781,6 +782,7 @@ input {
 .form-field-ft {
   margin-top: 20px;
   display: flex;
+  align-items: flex-end;
 }
 .input-ft {
   color: rgba(255, 255, 255, 0.6);
@@ -839,7 +841,7 @@ input {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
 }
-
+/* инпуты */
 .form-input,
 .form-message {
   width: 100%;
@@ -847,12 +849,14 @@ input {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   margin-top: 4px;
-  padding: 0 10px 0 35px;
+  padding: 12px 15px 12px 42px;
   transition: border 250ms var(--timing-function);
 }
 
 .form-input:focus,
-.form-input:hover {
+.form-input:hover,
+.form-message:focus,
+.form-message:hover {
   border: 1px solid var(--accent-color);
 }
 
@@ -861,41 +865,16 @@ input {
   fill: var(--accent-color);
 }
 .form-input-label {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
   margin-bottom: 28px;
   color: var(--primary-text-color);
   font-size: 12px;
   position: relative;
 }
-
-.textarea-label {
-  display: block;
-  color: var(--primary-text-color);
-  font-size: 12px;
-  position: absolute;
-  top: 0;
-  transform: translate(10px, 14px);
-  transition: transform 250ms var(--timing-function);
-}
-
-.message-box {
-  position: relative;
-  margin: 30px 0;
-}
-
-.form-message:focus + .textarea-label {
-  transform: translate(0px, -15px);
-}
-
-.form-message {
-  font-family: inherit;
-  resize: none;
-  height: 120px;
-  padding: 12px 16px;
-}
-
-.form-message::placeholder {
-  color: var(--primary-text-color);
+.form-input-label.message {
+  margin-bottom: 20px;
 }
 
 .form-input-icon {
@@ -908,15 +887,36 @@ input {
   fill: var(--title-text-color);
   transition: fill 250ms var(--timing-function);
 }
+/* ================================================ */
+/* textarea */
+.form-message {
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  line-height: 1.14;
+  resize: none;
+  height: 120px;
+  padding: 12px 16px;
+}
 
+.form-message::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+/* ================================================= */
+/*  */
 .policy-box {
   font-size: 14px;
   color: var(--primary-text-color);
   margin-bottom: 30px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
+.policy-box a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+/* ===кастомный чекбокс=== */
 .policy-checkbox {
   position: absolute;
   width: 1px;
@@ -927,35 +927,20 @@ input {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-.policy-checkbox:checked + .policy-box::before {
-  background-color: var(--accent-color);
-  background-image: url(../images/icons/checkbox-tip.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+.policy-checkbox:checked {
 }
-
-.policy-checkbox:focus + .policy-box::before {
-  border-color: var(--accent-color);
-  outline: 2px solid var(--accent-color);
-}
-
 .policy-box::before {
-  display: block;
   content: '';
+  display: block;
+  cursor: pointer;
   width: 16px;
-  height: 16px;
-  border: 1px solid var(--title-text-color);
+  height: 15px;
+  border: 2px solid var(--title-text-color);
   border-radius: 2px;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 
-.policy-box a {
-  color: var(--accent-color);
-  text-decoration: underline;
-}
-
+/* ======================================= */
 .submit-form-btn {
   padding: 10px 55px;
 }
